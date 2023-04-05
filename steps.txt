@@ -1,0 +1,23 @@
+1. Create index.js file and import React and ReactDOM 
+2. Create App.js file with the component (rafce)
+3. Create a root in index.js and render our App component using import
+4. Add all required dependancies and css files if required
+5. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shortcuts:- 
+1. Select the component with double click and ctrl+space and enter will import that component

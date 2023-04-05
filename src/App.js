@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// shortcut to create a component :- rafce
+// shortcut for indentation :- shift + alt + F
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Box } from "@mui/material";
+import { Navbar, Feed, SearchFeed, VideoDetail, ChannelDetail } from "./components";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+const App = () =>  (
+        <BrowserRouter>
+            <Box sx={{backgroundColor: "#0F0F0F"}}>       {/* The sx prop is a shortcut for defining custom styles that has access to the theme */ }
+                <Navbar />
+                <Routes>
+                    <Route path="/" exact element={<Feed />}></Route>    {/* root path */}
+                    <Route path="/video/:id" element={<VideoDetail />}></Route>
+                    <Route path="/channel/:id" element={<ChannelDetail />}></Route>
+                    <Route path="/search/:searchTerm" element={<SearchFeed />}></Route>
+                </Routes>
+            </Box>
+        </BrowserRouter>
+    );
+
+
+export default App
